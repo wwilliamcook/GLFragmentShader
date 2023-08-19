@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5...3.20)
 
-project(Shader)
+project(GLFragmentShader)
 
 
 ###############################################################################
