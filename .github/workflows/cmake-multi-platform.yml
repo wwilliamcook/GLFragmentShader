@@ -47,9 +47,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install action VM dependencies
+    - name: Install action VM dependencies for GLFW
       if: matrix.os == 'ubuntu-latest'
-      run: sudo apt update && sudo apt install libxrandr-dev libxinerama-dev libxcursor-dev -y
+      run: sudo apt update && sudo apt install libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev -y
 
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
