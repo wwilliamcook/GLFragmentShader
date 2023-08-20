@@ -26,3 +26,12 @@ target_include_directories(learnopengl_hellowindow PRIVATE
 target_link_libraries(learnopengl_hellowindow
                       glad
                       glfw)
+
+add_executable(learnopengl_hellotriangle
+               ${PROJECT_SOURCE_DIR}/tests/learnopengl_hellotriangle.cpp)
+target_include_directories(learnopengl_hellotriangle PRIVATE
+                           ${PROJECT_SOURCE_DIR}/include
+                           ${GLAD_DIR}/include)
+target_link_libraries(learnopengl_hellotriangle
+                      glad
+                      glfw)
