@@ -195,6 +195,23 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
  * Process GLFW window input.
 */
 void process_input(GLFWwindow *window) {
+    static bool wireframe_key_pressed;
+    static bool wireframe_enabled;
+
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
+    if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) {
+        if (!wireframe_key_pressed) {
+            if (wireframe_enabled) {
+                wireframe_enabled = false;
+                glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+            } else {
+                wireframe_enabled = true;
+                glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+            }
+        }
+        wireframe_key_pressed = true;
+    } else {
+        wireframe_key_pressed = false;
+    }
 }
