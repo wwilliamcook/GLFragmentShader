@@ -44,3 +44,8 @@ target_include_directories(hot_swap_shader PRIVATE
 target_link_libraries(hot_swap_shader
                       glad
                       glfw)
+add_custom_command(
+        TARGET hot_swap_shader POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/hot_swap_shader.frag
+                $<TARGET_FILE_DIR:hot_swap_shader>)
