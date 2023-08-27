@@ -8,8 +8,9 @@ project(GLFragmentShader)
 ###############################################################################
 
 set(GLAD_DIR "${PROJECT_SOURCE_DIR}/deps/glad_gl_core_33")
+set(GLFW_DIR "${PROJECT_SOURCE_DIR}/deps/glfw")
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/deps/glfw)
+add_subdirectory(${GLFW_DIR})
 add_library(glad ${GLAD_DIR}/src/gl.c
             ${GLAD_DIR}/include/glad/gl.h
             ${GLAD_DIR}/include/KHR/khrplatform.h)
